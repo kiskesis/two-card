@@ -1,0 +1,13 @@
+.game-options {
+    display: flex;
+    align-items: center;
+}
+
+.game-options__button {
+    margin-left: 5px;
+    height: 100%;
+}
+
+.players {
+    margin-left: 5px;
+}
