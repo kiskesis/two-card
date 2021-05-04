@@ -43,18 +43,28 @@ function GameBoard() {
     }
 
     function changePlayer(add = true) {
-        if ((add && players === 4) || (!add  && players === 2)) {
-            return;
+        const changedPlayers = add ? players + 1 : players - 1
+        if (changedPlayers <= 4 && changedPlayers >= 2) {
+            setPlayers(changedPlayers)
         }
 
-        setPlayers(add ? players + 1 : players - 1)
+        return changedPlayers
+    }
+
+    function removePlayer(index) {
+        console.log('kek')
+        const changedPlayers = changePlayer(false)
+        if (changedPlayers <= 4 && changedPlayers >= 2) {
+            hands.splice(index, 1)
+            setHands(hands)
+        }
     }
 
     return (
-        <div className="App">
+        <div className="game-board">
             <Rules/>
             <GameOptions players={players} changePlayer={changePlayer}/>
-            <ResultList hands={hands}/>
+            <ResultList hands={hands} removePlayer={removePlayer}/>
             <div>
                 <h4>Deal Button:</h4>
                 <button className="play-button" onClick={getRandomCards}>

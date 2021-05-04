@@ -3,13 +3,13 @@ import './index.css';
 import PlayerOptions from "../PlayerOptions";
 import { uuid } from 'uuidv4';
 
-function ResultList({ hands }) {
+function ResultList({ hands, removePlayer }) {
     return (
         <div className="result-list">
             {
                 hands && hands.map((hand, handNumber) => (
                     <div className="hand" key={uuid()}>
-                        <PlayerOptions hand={hand} handNumber={handNumber} />
+                        <PlayerOptions hand={hand} handNumber={handNumber} removePlayer={removePlayer} />
                         {
                             hand.cards.map(({card, name}) => (
                                 <img

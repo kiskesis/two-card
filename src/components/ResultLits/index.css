@@ -3,3 +3,19 @@
     height: 125px;
     margin-right: 5px;
 }
+
+.hand {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.pair-parent {
+    z-index: 2;
+}
+
+.pair {
+    height: 150px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    z-index: 1;
+}
